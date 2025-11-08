@@ -1,0 +1,728 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>David Hope Photography | Special Needs Photography | York County, SC</title>
+    <meta name="description"
+        content="Specialized photography for neurodivergent and medically complex children in York County, South Carolina. Judgment-free, flexible sessions that celebrate your child exactly who they are.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Lora:wght@400;500;600&display=swap"
+        rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --teal: #5a9ca6;
+            --teal-dark: #4a8290;
+            --cream: #f5f1e8;
+            --taupe: #b89f91;
+            --charcoal: #3d3d3d;
+            --white: #ffffff;
+        }
+
+        body {
+            font-family: 'Lora', Georgia, serif;
+            line-height: 1.6;
+            color: var(--charcoal);
+            background-color: var(--cream);
+        }
+
+        /* Montserrat for headings and navigation */
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6,
+        nav,
+        .logo,
+        .cta-button,
+        .submit-button,
+        .price,
+        .nav-links {
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        /* Header */
+        header {
+            background-color: var(--white);
+            padding: 1rem 5%;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .logo {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: var(--teal);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: var(--charcoal);
+            text-decoration: none;
+            transition: color 0.3s;
+            font-weight: 500;
+        }
+
+        .nav-links a:hover {
+            color: var(--teal);
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(90, 156, 166, 0.3), rgba(74, 130, 144, 0.88)),
+                url('https://images.unsplash.com/photo-1612209891753-fe68e2eee5bd?w=1600&q=80') center/cover;
+            background-attachment: fixed;
+            color: var(--white);
+            padding: 5rem 5% 4rem;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg width="100" height="100" xmlns="http://www.w3.org/2000/svg"><circle cx="50" cy="50" r="2" fill="rgba(255,255,255,0.1)"/></svg>');
+            opacity: 0.3;
+        }
+
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 0.75rem;
+            font-weight: 700;
+            animation: fadeInUp 1s ease;
+        }
+
+        .hero-tagline {
+            font-size: 1.3rem;
+            margin-bottom: 1.5rem;
+            font-weight: 300;
+            animation: fadeInUp 1s ease 0.2s backwards;
+        }
+
+        .hero-subtitle {
+            font-size: 1rem;
+            margin-bottom: 1.5rem;
+            opacity: 0.95;
+            animation: fadeInUp 1s ease 0.4s backwards;
+        }
+
+        .cta-button {
+            display: inline-block;
+            padding: 1rem 2.5rem;
+            background-color: var(--taupe);
+            color: var(--white);
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: all 0.3s;
+            animation: fadeInUp 1s ease 0.6s backwards;
+        }
+
+        .cta-button:hover {
+            background-color: #a08274;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Section Styles */
+        section {
+            padding: 3.5rem 5%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        h2 {
+            font-size: 2rem;
+            color: var(--teal);
+            margin-bottom: 1.5rem;
+            text-align: center;
+        }
+
+        /* About Section */
+        .about {
+            background-color: var(--white);
+        }
+
+        .about-content {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+            font-size: 1.05rem;
+            line-height: 1.7;
+        }
+
+        .about-content p {
+            margin-bottom: 1.2rem;
+        }
+
+        .highlight {
+            color: var(--teal);
+            font-weight: 600;
+        }
+
+        /* Services Section */
+        .services {
+            background: linear-gradient(rgba(245, 241, 232, 0.95), rgba(245, 241, 232, 0.95)),
+                url('https://images.unsplash.com/photo-1618330931081-d4e2a9490eed?w=1600&q=80') center/cover;
+            background-attachment: fixed;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .service-card {
+            background-color: var(--white);
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s;
+            text-align: center;
+            cursor: pointer;
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 30px rgba(90, 156, 166, 0.3);
+        }
+
+        .service-card.breathing {
+            animation: breathe 2s ease-in-out infinite;
+        }
+
+        @keyframes breathe {
+
+            0%,
+            100% {
+                transform: scale(1) translateY(-10px);
+            }
+
+            50% {
+                transform: scale(1.02) translateY(-10px);
+            }
+        }
+
+        .service-card h3 {
+            color: var(--teal);
+            font-size: 1.5rem;
+            margin-bottom: 0.75rem;
+        }
+
+        .price {
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--taupe);
+            margin: 0.75rem 0;
+        }
+
+        .service-card ul {
+            list-style: none;
+            text-align: left;
+            margin: 1.2rem 0;
+        }
+
+        .service-card li {
+            padding: 0.4rem 0;
+            padding-left: 1.5rem;
+            position: relative;
+        }
+
+        .service-card li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: var(--teal);
+            font-weight: bold;
+        }
+
+        /* Portfolio Section */
+        .portfolio {
+            background-color: var(--white);
+        }
+
+        .portfolio-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+
+        .portfolio-item {
+            position: relative;
+            overflow: hidden;
+            border-radius: 10px;
+            aspect-ratio: 1;
+            background: linear-gradient(135deg, var(--teal) 0%, var(--taupe) 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--white);
+            font-size: 1.2rem;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .portfolio-item:hover {
+            transform: scale(1.05);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        }
+
+        .portfolio-item::after {
+            content: 'Coming Soon';
+            position: absolute;
+            font-weight: 600;
+        }
+
+        /* Contact Section */
+        .contact {
+            background: linear-gradient(rgba(245, 241, 232, 0.97), rgba(245, 241, 232, 0.97)),
+                url('https://images.unsplash.com/photo-1476703993599-0035a21b17a9?w=1600&q=80') center/cover;
+            background-attachment: fixed;
+        }
+
+        .contact-content {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .contact-intro {
+            text-align: center;
+            margin-bottom: 2rem;
+            font-size: 1.1rem;
+        }
+
+        .contact form {
+            background-color: var(--white);
+            padding: 2.5rem;
+            border-radius: 10px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+            color: var(--teal);
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 0.8rem;
+            border: 2px solid var(--cream);
+            border-radius: 5px;
+            font-size: 1rem;
+            font-family: inherit;
+            transition: border-color 0.3s;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--teal);
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            min-height: 150px;
+        }
+
+        .submit-button {
+            width: 100%;
+            padding: 1rem;
+            background-color: var(--teal);
+            color: var(--white);
+            border: none;
+            border-radius: 5px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .submit-button:hover {
+            background-color: var(--teal-dark);
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--charcoal);
+            color: var(--white);
+            text-align: center;
+            padding: 2rem 5%;
+        }
+
+        footer p {
+            margin-bottom: 0.5rem;
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Mobile Menu */
+        .mobile-menu-toggle {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            color: var(--teal);
+            cursor: pointer;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .hero-tagline {
+                font-size: 1.2rem;
+            }
+
+            .nav-links {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                background-color: var(--white);
+                flex-direction: column;
+                padding: 1rem;
+                box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+            }
+
+            .nav-links.active {
+                display: flex;
+            }
+
+            .mobile-menu-toggle {
+                display: block;
+            }
+
+            h2 {
+                font-size: 2rem;
+            }
+
+            section {
+                padding: 3rem 5%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <nav>
+            <div class="logo">David Hope Photography</div>
+            <button class="mobile-menu-toggle" id="mobileMenuToggle">☰</button>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#portfolio">Portfolio</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <h1>David Hope Photography</h1>
+            <p class="hero-tagline">Real moments. Real families. Real understanding.</p>
+            <p class="hero-subtitle">Specialized photography for neurodivergent and medically
+                complex children in York County, South Carolina</p>
+            <a href="#contact" class="cta-button">Book Your Session</a>
+        </div>
+    </section>
+
+    <section class="about" id="about">
+        <h2>About David</h2>
+        <div class="about-content">
+            <p>As a single dad of a medically complex, nonverbal ASD child, I understand both the
+                unique challenges and beautiful moments of special needs families.</p>
+            <p>Whether your child is neurodivergent, medically complex, or simply needs extra
+                patience and understanding—I create a <span class="highlight">judgment-free,
+                    flexible photography experience</span> that celebrates your child exactly <span
+                    class="highlight">who they are</span>.</p>
+            <p>I know that feeding tubes, communication devices, sensory tools, and mobility aids
+                are part of your child's story. I don't ask you to hide them—I honor them.</p>
+            <p>Sessions are flexible, follow your child's lead, and there's zero pressure for
+                "perfect" poses. We work at your child's pace, take breaks as needed, and capture
+                the authentic beauty of your family.</p>
+        </div>
+    </section>
+
+    <section class="services" id="services">
+        <h2>Photography Sessions</h2>
+        <div class="services-grid">
+            <div class="service-card">
+                <h3>30-Minute Session</h3>
+                <div class="price">$65</div>
+                <ul>
+                    <li>Perfect for younger children or shorter attention spans</li>
+                    <li>10-15 professionally edited digital images</li>
+                    <li>Flexible, follow-your-child's-lead approach</li>
+                    <li>Natural light, relaxed environment</li>
+                    <li>In-home sessions available</li>
+                    <li>Digital gallery delivered within 1-2 weeks</li>
+                </ul>
+            </div>
+
+            <div class="service-card">
+                <h3>60-Minute Session</h3>
+                <div class="price">$120</div>
+                <ul>
+                    <li>Extended time for multiple setups or locations</li>
+                    <li>20-25 professionally edited digital images</li>
+                    <li>Flexible scheduling with breaks as needed</li>
+                    <li>Natural, authentic moments captured</li>
+                    <li>In-home sessions available</li>
+                    <li>Digital gallery delivered within 1-2 weeks</li>
+                </ul>
+            </div>
+        </div>
+        <div style="text-align: center; margin-top: 2rem; font-style: italic; color: var(--teal);">
+            <p>Serving York County, SC and surrounding areas</p>
+            <p style="margin-top: 0.5rem; font-size: 0.9rem;">Travel fees may apply for locations
+                outside York County</p>
+            <p style="margin-top: 1rem; font-weight: 600;">Introductory portfolio-building rates</p>
+        </div>
+    </section>
+
+    <section class="portfolio" id="portfolio">
+        <h2>Portfolio</h2>
+        <p style="text-align: center; margin-bottom: 2rem; font-style: italic;">Gallery coming soon
+            as I build my special needs photography portfolio</p>
+        <div class="portfolio-grid">
+            <div class="portfolio-item"></div>
+            <div class="portfolio-item"></div>
+            <div class="portfolio-item"></div>
+            <div class="portfolio-item"></div>
+            <div class="portfolio-item"></div>
+            <div class="portfolio-item"></div>
+        </div>
+    </section>
+
+    <section class="contact" id="contact">
+        <h2>Let's Connect</h2>
+        <div class="contact-content">
+            <p class="contact-intro">Ready to book a session or have questions? I'd love to hear
+                from you. I'll respond within 24 hours.</p>
+            <form id="contactForm">
+                <div class="form-group">
+                    <label for="name">Your Name *</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email Address *</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="phone">Phone Number</label>
+                    <input type="tel" id="phone" name="phone">
+                </div>
+                <div class="form-group">
+                    <label for="message">Tell me about your child and what you're looking for
+                        *</label>
+                    <textarea id="message" name="message" required></textarea>
+                </div>
+                <button type="submit" class="submit-button">Send Message</button>
+            </form>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 David Hope Photography</p>
+        <p>York County, South Carolina</p>
+        <p><a href="mailto:davidhopephotos@gmail.com"
+                style="color: var(--taupe); text-decoration: none;">davidhopephotos@gmail.com</a>
+        </p>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        const mobileMenuToggle = document.getElementById('mobileMenuToggle');
+        const navLinks = document.getElementById('navLinks');
+
+        mobileMenuToggle.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+        });
+
+        // Close mobile menu when clicking a link
+        navLinks.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                navLinks.classList.remove('active');
+            });
+        });
+
+        // Smooth scrolling
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Form submission
+        const contactForm = document.getElementById('contactForm');
+        contactForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+
+            const formData = new FormData(contactForm);
+            const name = formData.get('name');
+            const email = formData.get('email');
+            const phone = formData.get('phone');
+            const message = formData.get('message');
+
+            // Create mailto link
+            const subject = encodeURIComponent(`Photography Inquiry from ${name}`);
+            const body = encodeURIComponent(
+                `Name: ${name}\n` +
+                `Email: ${email}\n` +
+                `Phone: ${phone || 'Not provided'}\n\n` +
+                `Message:\n${message}`
+            );
+
+            window.location.href = `mailto:davidhopephotos@gmail.com?subject=${subject}&body=${body}`;
+
+            // Reset form
+            contactForm.reset();
+            alert('Thank you for your message! Your email client will open. If it doesn\'t, please email me directly at davidhopephotos@gmail.com');
+        });
+
+        // Add scroll effect to header
+        let lastScroll = 0;
+        const header = document.querySelector('header');
+
+        window.addEventListener('scroll', () => {
+            const currentScroll = window.pageYOffset;
+
+            if (currentScroll <= 0) {
+                header.style.boxShadow = '0 2px 10px rgba(0,0,0,0.1)';
+            } else {
+                header.style.boxShadow = '0 2px 20px rgba(0,0,0,0.15)';
+            }
+
+            lastScroll = currentScroll;
+        });
+
+        // Intersection Observer for fade-in animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        // Observe service cards and portfolio items
+        document.querySelectorAll('.service-card, .portfolio-item').forEach(el => {
+            el.style.opacity = '0';
+            el.style.transform = 'translateY(30px)';
+            el.style.transition = 'all 0.6s ease';
+            observer.observe(el);
+        });
+
+        // Breathing effect on service cards
+        document.querySelectorAll('.service-card').forEach(card => {
+            card.addEventListener('mouseenter', () => {
+                card.classList.add('breathing');
+            });
+
+            card.addEventListener('mouseleave', () => {
+                card.classList.remove('breathing');
+            });
+
+            // Make entire card clickable - scroll to contact
+            card.addEventListener('click', () => {
+                document.querySelector('#contact').scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start'
+                });
+            });
+        });
+
+        // Parallax scroll effect
+        window.addEventListener('scroll', () => {
+            const scrolled = window.pageYOffset;
+            const parallaxElements = document.querySelectorAll('.hero, .services, .contact');
+
+            parallaxElements.forEach(element => {
+                const speed = 0.5;
+                const yPos = -(scrolled * speed);
+                element.style.backgroundPosition = `center ${yPos}px`;
+            });
+        });
+    </script>
+</body>
+
+</html>
